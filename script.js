@@ -320,61 +320,215 @@ Premium Single Page Architecture
 =========================================
 `);
 
-
 /* ==========================
-LOGIN MODAL
+AUTH MODAL
 ========================== */
 
-function openAuth(){
-    document.getElementById("loginModal").style.display="flex";
+function openAuth() {
+    document.getElementById("loginModal").style.display = "flex";
 }
 
-function closeAuth(){
-    document.getElementById("loginModal").style.display="none";
+function closeAuth() {
+    document.getElementById("loginModal").style.display = "none";
 }
 
-function showSignup(){
+/* ==========================
+SWITCH FORMS
+========================== */
 
-    document.getElementById("loginBox").style.display="none";
-    document.getElementById("forgotBox").style.display="none";
-    document.getElementById("signupBox").style.display="block";
+function showSignup() {
+
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("forgotBox").style.display = "none";
+    document.getElementById("signupBox").style.display = "block";
 }
 
-function showLogin(){
+function showLogin() {
 
-    document.getElementById("loginBox").style.display="block";
-    document.getElementById("forgotBox").style.display="none";
-    document.getElementById("signupBox").style.display="none";
+    document.getElementById("loginBox").style.display = "block";
+    document.getElementById("forgotBox").style.display = "none";
+    document.getElementById("signupBox").style.display = "none";
 }
 
-function showForgot(){
+function showForgot() {
 
-    document.getElementById("loginBox").style.display="none";
-    document.getElementById("signupBox").style.display="none";
-    document.getElementById("forgotBox").style.display="block";
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("signupBox").style.display = "none";
+    document.getElementById("forgotBox").style.display = "block";
 }
 
-function loginUser(){
-    alert("Login functionality connected successfully.");
-}
+/* ==========================
+LOGIN
+========================== */
 
-function signupUser(){
-    alert("Registration submitted successfully.");
-}
+function loginUser() {
 
-function forgotPassword(){
-    alert("Password reset link sent.");
-}
+    const role = document.getElementById("loginRole").value;
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
 
-window.onclick = function(event){
+    if (email === "" || password === "") {
 
-    const modal =
-    document.getElementById("loginModal");
+        alert("Please enter Email and Password");
+        return;
+    }
 
-    if(event.target === modal){
-        closeAuth();
+    localStorage.setItem("userRole", role);
+    localStorage.setItem("userEmail", email);
+
+    if (role === "Client") {
+
+
+
+        window.location.href = "client-dashboard.html";
+
+    } else if (role === "admin") {
+
+    
+
+        window.location.href = "admin-dashboard.html";
     }
 }
+
+/* ==========================
+SIGNUP
+========================== */
+
+function signupUser() {
+
+    const name =
+        document.getElementById("signupName").value.trim();
+
+    const email =
+        document.getElementById("signupEmail").value.trim();
+
+    const password =
+        document.getElementById("ConfirmPassword").value.trim();
+
+    const confirmPassword =
+        document.getElementById("confirmPassword").value.trim();
+
+    const role =
+        document.getElementById("signupRole").value;
+
+    if (
+        name === "" ||
+        email === "" ||
+        password === "" ||
+        confirmPassword === ""
+    ) {
+
+        alert("Please fill all fields");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+
+        alert("Passwords do not match");
+        return;
+    }
+
+    const userData = {
+        name,
+        email,
+        password,
+        role
+    };
+
+    localStorage.setItem(
+        "registeredUser",
+        JSON.stringify(userData)
+    );
+
+    alert("Registration Successful");
+
+    showLogin();
+}
+
+/* ==========================
+FORGOT PASSWORD
+========================== */
+
+function forgotPassword() {
+
+    const email =
+        document.getElementById("forgotEmail").value.trim();
+
+    if (email === "") {
+
+        alert("Please enter your email");
+        return;
+    }
+
+    alert(
+        "Password reset link sent to: " + email
+    );
+
+    showLogin();
+}
+
+/* ==========================
+LOGOUT
+========================== */
+
+function logoutUser() {
+
+    localStorage.removeItem("userRole");
+    localStorage.removeItem("userEmail");
+
+   
+
+    window.location.href = "index.html";
+}
+
+/* ==========================
+CLIENT PAGE PROTECTION
+========================== */
+
+function protectClientPage() {
+
+    const role =
+        localStorage.getItem("userRole");
+
+    if (role !== "Client") {
+
+        alert("Access Denied");
+
+        window.location.href = "index.html";
+    }
+}
+
+/* ==========================
+ADMIN PAGE PROTECTION
+========================== */
+
+function protectAdminPage() {
+
+    const role =
+        localStorage.getItem("userRole");
+
+    if (role !== "admin") {
+
+        alert("Access Denied");
+
+        window.location.href = "index.html";
+    }
+}
+
+/* ==========================
+CLOSE MODAL OUTSIDE CLICK
+========================== */
+
+window.onclick = function (event) {
+
+    const modal =
+        document.getElementById("loginModal");
+
+    if (event.target === modal) {
+
+        closeAuth();
+    }
+};
 
 
 // Mouse Parallax
@@ -424,3 +578,54 @@ const observer = new IntersectionObserver((entries)=>{
 cards.forEach(card=>{
     observer.observe(card);
 });
+
+function showSection(sectionId){
+
+    document.querySelectorAll(".section").forEach(section=>{
+        section.style.display = "none";
+    });
+
+    document.getElementById(sectionId).style.display = "block";
+
+    document.querySelectorAll(".sidebar a").forEach(link=>{
+        link.classList.remove("active");
+    });
+
+    event.currentTarget.classList.add("active");
+
+    if(window.innerWidth <= 768){
+        document.querySelector(".sidebar").classList.remove("active");
+    }
+}
+
+function goDashboard(){
+
+    document.querySelectorAll(".section").forEach(section=>{
+        section.style.display = "none";
+    });
+
+    document.getElementById("dashboard").style.display = "block";
+
+    if(window.innerWidth <= 768){
+        document.querySelector(".sidebar").classList.remove("active");
+    }
+}
+
+function toggleMenu(){
+    document.querySelector(".sidebar").classList.toggle("active");
+}
+
+function logoutUser(){
+    window.location.href = "index.html";
+}
+
+window.onload = function(){
+
+    document.querySelectorAll(".section").forEach(section=>{
+        section.style.display = "none";
+    });
+
+    document.getElementById("dashboard").style.display = "block";
+};
+
+

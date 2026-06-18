@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Page Not Found</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* ==========================
+   GOOGLE FONT
+========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ==========================
+   BODY
+========================== */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(rgba(10,17,40,.85),
+    rgba(10,17,40,.85)),
+    url('./assets/legal-bg.webp') center/cover no-repeat;
+    overflow:hidden;
+}
+
+/* ==========================
+   404 CARD
+========================== */
+.error-container{
+    width:90%;
+    max-width:700px;
+    text-align:center;
+    padding:60px 40px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+    animation:fadeUp 1s ease;
+}
+
+/* ==========================
+   ICON
+========================== */
+.error-icon{
+    font-size:90px;
+    color:#C5A059;
+    margin-bottom:20px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+/* ==========================
+   TEXT
+========================== */
+.error-container h1{
+    font-size:120px;
+    color:#fff;
+    line-height:1;
+    margin-bottom:15px;
+}
+
+.error-container h2{
+    color:#C5A059;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.error-container p{
+    color:#d8d8d8;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+.btn-group{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 32px;
+    border:none;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:15px;
+    transition:.4s;
+    cursor:pointer;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:#C5A059;
+    color:#0A1128;
+    box-shadow:0 15px 35px rgba(197,160,89,.4);
+}
+
+.btn i{
+    margin-right:8px;
+}
+
+/* ==========================
+   ANIMATION
+========================== */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+@media(max-width:768px){
+
+.error-container{
+    padding:40px 25px;
+}
+
+.error-container h1{
+    font-size:80px;
+}
+
+.error-container h2{
+    font-size:24px;
+}
+
+.btn{
+    width:100%;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="error-container">
+
+    <div class="error-icon">
+        <i class="fa-solid fa-scale-balanced"></i>
+    </div>
+
+    <h1>404</h1>
+
+    <h2>Page Not Found</h2>
+
+    <p>
+        The page you are looking for may have been moved,
+        removed, or is currently unavailable. Please return
+        to the homepage or your client dashboard to continue
+        accessing legal resources and services.
+    </p>
+
+    <div class="btn-group">
+
+        <a href="index.html" class="btn">
+            <i class="fa-solid fa-house"></i>
+            Back To Home
+        </a>
+
+        <a href="admin-dashboard.html" class="btn">
+            <i class="fa-solid fa-gauge-high"></i>
+            Back To Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

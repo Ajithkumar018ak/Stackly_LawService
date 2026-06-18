@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Aegis Legal Chambers</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+    </div>
+
+    <img src="./assets/logo.webp"
+         alt="Logo"
+         class="logo"
+         onclick="goDashboard()">
+
+    <div class="nav-right">
+
+        <a href="index.html" class="home-btn">
+            Home
+        </a>
+
+        <div class="profile-box">
+
+            <img src="./assets/client.webp">
+
+            <span>Administrator</span>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <h2>Admin Panel</h2>
+
+    <a onclick="showSection('dashboard',this)" class="active">
+        <i class="fa fa-chart-line"></i>
+        Dashboard
+    </a>
+
+    <a onclick="showSection('cases',this)">
+        <i class="fa fa-scale-balanced"></i>
+        Case Management
+    </a>
+
+    <a onclick="showSection('attorneys',this)">
+        <i class="fa fa-user-tie"></i>
+        Attorneys
+    </a>
+
+    <a onclick="showSection('clients',this)">
+        <i class="fa fa-users"></i>
+        Clients
+    </a>
+
+    <a onclick="showSection('consultations',this)">
+        <i class="fa fa-calendar-check"></i>
+        Consultations
+    </a>
+
+    <a onclick="showSection('documents',this)">
+        <i class="fa fa-file-contract"></i>
+        Documents
+    </a>
+
+    <a onclick="showSection('analytics',this)">
+        <i class="fa fa-chart-pie"></i>
+        Analytics
+    </a>
+
+
+    <a onclick="logoutUser()">
+        <i class="fa fa-sign-out-alt"></i>
+        Logout
+    </a>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="section">
+
+<h2>Law Firm Administration Overview</h2>
+
+<div class="welcome-banner">
+
+    <div class="welcome-content">
+
+        <h3>
+            Welcome Back, Administrator
+        </h3>
+
+        <p>
+            Manage legal operations, monitor attorney
+            performance, review active matters, oversee
+            consultations, track client relationships,
+            and access firm-wide analytics from a single
+            administration platform.
+        </p>
+
+    </div>
+
+   
+
+</div>
+
+<div class="cards">
+
+    <div class="card">
+
+        <i class="fa fa-users"></i>
+
+        <h3>1,245</h3>
+
+        <p>Total Clients</p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa fa-scale-balanced"></i>
+
+        <h3>326</h3>
+
+        <p>Active Cases</p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa fa-user-tie"></i>
+
+        <h3>42</h3>
+
+        <p>Attorneys</p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa fa-calendar-check"></i>
+
+        <h3>186</h3>
+
+        <p>Consultations</p>
+
+    </div>
+
+</div>
+
+<div class="cards" style="margin-top:25px;">
+
+    <div class="card">
+
+        <i class="fa fa-building"></i>
+
+        <h3>175</h3>
+
+        <p>Corporate Clients</p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa fa-award"></i>
+
+        <h3>98%</h3>
+
+        <p>Success Rate</p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa fa-gavel"></i>
+
+        <h3>89</h3>
+
+        <p>Litigation Matters</p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa fa-indian-rupee-sign"></i>
+
+        <h3>₹24.6M</h3>
+
+        <p>Annual Revenue</p>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- CASE MANAGEMENT -->
+
+<div id="cases" class="section hidden">
+
+<h2>Case Management</h2>
+
+<div class="grid">
+
+    <div class="box">
+
+        <img src="./assets/a1.webp">
+
+        <h3>Corporate Litigation Matter</h3>
+
+        <p>
+            Multi-million dollar contractual dispute
+            involving shareholder rights and governance.
+        </p>
+
+        <button onclick="window.location.href='404admin.html'">
+            Manage Case
+        </button>
+
+    </div>
+
+    <div class="box">
+
+        <img src="./assets/a2.webp">
+
+        <h3>Regulatory Investigation</h3>
+
+        <p>
+            Government compliance review and
+            corporate defense representation.
+        </p>
+
+        <button onclick="window.location.href='404admin.html'">
+            Manage Case
+        </button>
+
+    </div>
+
+    <div class="box">
+
+        <img src="./assets/a3.webp">
+
+        <h3>Trademark Enforcement</h3>
+
+        <p>
+            Intellectual property infringement
+            litigation across multiple jurisdictions.
+        </p>
+
+        <button onclick="window.location.href='404admin.html'">
+            Manage Case
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- ATTORNEY MANAGEMENT -->
+
+<div id="attorneys" class="section hidden">
+
+<h2>Attorney Management</h2>
+
+<div class="assignment-card">
+
+    <img src="./assets/a4.webp">
+
+    <div>
+
+        <h3>Michael Anderson</h3>
+
+        <p>Senior Corporate Attorney</p>
+
+        <p>
+            Specializing in mergers, acquisitions,
+            compliance and corporate governance.
+        </p>
+
+        <button onclick="window.location.href='404admin.html'">
+            View Profile
+        </button>
+
+    </div>
+
+</div>
+
+<div class="assignment-card">
+
+    <img src="./assets/a5.webp">
+
+    <div>
+
+        <h3>Sarah Johnson</h3>
+
+        <p>Intellectual Property Counsel</p>
+
+        <p>
+            Trademark registration, licensing,
+            copyright protection and enforcement.
+        </p>
+
+        <button onclick="window.location.href='404admin.html'">
+            View Profile
+        </button>
+
+    </div>
+
+</div>
+
+<div class="assignment-card">
+
+    <img src="./assets/a6.webp">
+
+    <div>
+
+        <h3>David Williams</h3>
+
+        <p>Litigation Partner</p>
+
+        <p>
+            Commercial litigation specialist
+            representing corporate clients.
+        </p>
+
+        <button onclick="window.location.href='404admin.html'">
+            View Profile
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- CLIENT MANAGEMENT -->
+
+<div id="clients" class="section hidden">
+
+<h2>Client Management</h2>
+
+<div class="assignment-card">
+
+    <img src="./assets/a7.webp">
+
+    <div>
+
+        <h3>Global Holdings Ltd.</h3>
+
+        <p>Corporate Client</p>
+
+        <p>
+            Active matters include governance,
+            compliance and acquisition support.
+        </p>
+
+        <button onclick="window.location.href='404admin.html'">
+            View Client
+        </button>
+
+    </div>
+
+</div>
+
+<div class="assignment-card">
+
+    <img src="./assets/a8.webp">
+
+    <div>
+
+        <h3>Anderson Technologies</h3>
+
+        <p>Business Client</p>
+
+        <p>
+            Intellectual property protection,
+            licensing and commercial advisory.
+        </p>
+
+        <button onclick="window.location.href='404admin.html'">
+            View Client
+        </button>
+
+    </div>
+
+</div>
+
+<div class="assignment-card">
+
+    <img src="./assets/a9.webp">
+
+    <div>
+
+        <h3>Summit Financial Group</h3>
+
+        <p>Enterprise Client</p>
+
+        <p>
+            Regulatory compliance and
+            financial litigation representation.
+        </p>
+
+        <button onclick="window.location.href='404admin.html'">
+            View Client
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- CONSULTATIONS -->
+
+<div id="consultations" class="section hidden">
+
+<h2>Upcoming Consultations</h2>
+
+<div class="assignment-card">
+
+    <img src="./assets/a7.webp">
+
+    <div>
+
+        <h3>Corporate Strategy Meeting</h3>
+
+        <p>
+            Client: Global Holdings Ltd.
+        </p>
+
+        <p>
+            Date: July 28, 2026
+        </p>
+
+        <span class="pending">
+            Scheduled
+        </span>
+
+    </div>
+
+</div>
+
+<div class="assignment-card">
+
+    <img src="./assets/a9.webp">
+
+    <div>
+
+        <h3>Compliance Advisory Session</h3>
+
+        <p>
+            Client: Summit Financial Group
+        </p>
+
+        <p>
+            Date: July 31, 2026
+        </p>
+
+        <span class="pending">
+            Scheduled
+        </span>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- DOCUMENTS -->
+
+<div id="documents" class="section hidden">
+
+    <h2>Legal Documents & Records</h2>
+
+    <div class="assignment-card">
+
+        <img src="./assets/a10.webp" alt="Document">
+
+        <div>
+
+            <h3>Corporate Compliance Report</h3>
+
+            <p>
+                Comprehensive compliance audit covering
+                governance standards, internal controls,
+                and regulatory obligations.
+            </p>
+
+            <span class="completed">
+                Approved
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="assignment-card">
+
+        <img src="./assets/a11.webp" alt="Document">
+
+        <div>
+
+            <h3>Contract Review File</h3>
+
+            <p>
+                Commercial contract assessment,
+                legal risk evaluation,
+                and negotiation recommendations.
+            </p>
+
+            <span class="pending">
+                Under Review
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="assignment-card">
+
+        <img src="./assets/a12.webp" alt="Document">
+
+        <div>
+
+            <h3>Intellectual Property Portfolio</h3>
+
+            <p>
+                Trademark registrations,
+                copyright documentation,
+                and licensing agreements.
+            </p>
+
+            <span class="completed">
+                Archived
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ANALYTICS -->
+
+<div id="analytics" class="section hidden">
+
+    <h2>Business Analytics & Performance</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fa fa-scale-balanced"></i>
+            <h3>98%</h3>
+            <p>Case Success Rate</p>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-users"></i>
+            <h3>1,250+</h3>
+            <p>Clients Served</p>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-file-contract"></i>
+            <h3>8,500+</h3>
+            <p>Legal Documents Managed</p>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-briefcase"></i>
+            <h3>420+</h3>
+            <p>Active Cases</p>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="box">
+
+            <img src="./assets/a13.webp">
+
+            <h3>Corporate Litigation Performance</h3>
+
+            <p>
+                Monitoring legal outcomes,
+                dispute resolution efficiency,
+                and risk mitigation metrics.
+            </p>
+
+        </div>
+
+        <div class="box">
+
+            <img src="./assets/a14.webp">
+
+            <h3>Client Satisfaction Analysis</h3>
+
+            <p>
+                Client engagement trends,
+                service quality indicators,
+                and retention performance.
+            </p>
+
+        </div>
+
+        <div class="box">
+
+            <img src="./assets/a15.webp">
+
+            <h3>Financial Growth Overview</h3>
+
+            <p>
+                Revenue growth,
+                operational efficiency,
+                and business expansion insights.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script >
+    
+    // Sidebar Section Switch
+function showSection(sectionId, element) {
+
+    // Hide all sections
+    document.querySelectorAll(".section").forEach(section => {
+        section.style.display = "none";
+    });
+
+    // Show selected section
+    const target = document.getElementById(sectionId);
+
+    if (target) {
+        target.style.display = "block";
+    }
+
+    // Active menu
+    document.querySelectorAll(".sidebar a").forEach(link => {
+        link.classList.remove("active");
+    });
+
+    if (element) {
+        element.classList.add("active");
+    }
+
+    // Mobile sidebar close
+    if (window.innerWidth <= 992) {
+        document.querySelector(".sidebar").classList.remove("active");
+    }
+}
+
+// Logo Click
+function goDashboard() {
+
+    document.querySelectorAll(".section").forEach(section => {
+        section.style.display = "none";
+    });
+
+    document.getElementById("dashboard").style.display = "block";
+
+    document.querySelectorAll(".sidebar a").forEach(link => {
+        link.classList.remove("active");
+    });
+
+    document.querySelector(".sidebar a").classList.add("active");
+}
+
+// Mobile Menu
+function toggleMenu() {
+    document.querySelector(".sidebar").classList.toggle("active");
+}
+
+// Logout
+function logoutUser() {
+    window.location.href = "index.html";
+}
+
+// Default Load
+window.addEventListener("load", () => {
+
+    document.querySelectorAll(".section").forEach(section => {
+        section.style.display = "none";
+    });
+
+    document.getElementById("dashboard").style.display = "block";
+});
+</script>
+
+</body>
+</html>
