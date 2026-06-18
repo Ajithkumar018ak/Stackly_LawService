@@ -351,7 +351,8 @@ FORM
 .form-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:25px;
+    column-gap: 40px;
+    row-gap: 35px;
 }
 
 .form-group{
@@ -360,7 +361,7 @@ FORM
 }
 
 .form-group label{
-    margin-bottom:10px;
+    margin-bottom:25px;
     color:var(--navy);
     font-weight:600;
 }
@@ -368,14 +369,14 @@ FORM
 .form-group input,
 .form-group select,
 .form-group textarea{
-    padding:18px;
+    padding:25px;
     border:1px solid #ddd;
     border-radius:8px;
     font-size:1rem;
 }
 
 .full-width{
-    margin-top:30px;
+    margin-top:45px;
 }
 
 .submit-btn{
@@ -586,12 +587,12 @@ RESPONSIVE
 /* ==========================
 NAVBAR LOGO
 ========================== */
-
 .logo img{
-    height: 90px;
+    height:120px;
     width:auto;
-    display:block;
-   
+
+    margin-top:-20px;
+    margin-bottom:-20px;
 }
 
 /* ==========================
@@ -3087,4 +3088,213 @@ RESPONSIVE
 .footer-bottom{
     margin-top:40px;
     padding-top:20px;
+}
+
+
+/* =========================
+   WEBSITE LOADER
+========================= */
+
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#0A1128;
+    z-index:999999;
+}
+
+.loader-content{
+    text-align:center;
+}
+
+.loader-content img{
+    width:320px; /* BIG SIZE */
+    height:auto;
+    display:block;
+    margin:auto;
+
+    animation:loaderLogo 2s ease-in-out infinite;
+}
+
+.loader-content h2{
+    margin-top:20px;
+    color:#C5A059;
+    font-size:2.2rem;
+    letter-spacing:2px;
+}
+
+.loading-bar{
+    width:320px;
+    height:8px;
+    margin-top:25px;
+
+    background:rgba(255,255,255,.15);
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.loading-bar span{
+    display:block;
+    height:100%;
+    width:0%;
+
+    background:linear-gradient(
+    90deg,
+    #C5A059,
+    #f5d38f);
+
+    animation:loadingBar 3s linear forwards;
+}
+
+@keyframes loadingBar{
+    from{
+        width:0%;
+    }
+    to{
+        width:100%;
+    }
+}
+
+@keyframes loaderLogo{
+
+    0%{
+        transform:scale(.8) rotateY(0deg);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.1) rotateY(180deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(.8) rotateY(360deg);
+        opacity:.5;
+    }
+}
+
+.loader-hide{
+    opacity:0;
+    visibility:hidden;
+    transition:1s;
+}/* =========================
+   WEBSITE LOADER
+========================= */
+
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#0A1128;
+    z-index:999999;
+}
+
+.loader-content{
+    text-align:center;
+}
+
+.loader-content img{
+    width:320px; /* BIG SIZE */
+    height:auto;
+    display:block;
+    margin:auto;
+
+    animation:loaderLogo 2s ease-in-out infinite;
+}
+
+.loader-content h2{
+    margin-top:20px;
+    color:#C5A059;
+    font-size:2.2rem;
+    letter-spacing:2px;
+}
+
+.loading-bar{
+    width:320px;
+    height:8px;
+    margin-top:25px;
+
+    background:rgba(255,255,255,.15);
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.loading-bar span{
+    display:block;
+    height:100%;
+    width:0%;
+
+    background:linear-gradient(
+    90deg,
+    #C5A059,
+    #f5d38f);
+
+    animation:loadingBar 3s linear forwards;
+}
+
+@keyframes loadingBar{
+    from{
+        width:0%;
+    }
+    to{
+        width:100%;
+    }
+}
+
+@keyframes loaderLogo{
+
+    0%{
+        transform:scale(.8) rotateY(0deg);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.1) rotateY(180deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(.8) rotateY(360deg);
+        opacity:.5;
+    }
+}
+
+.loader-hide{
+    opacity:0;
+    visibility:hidden;
+    transition:1s;
+}
+
+
+.legal-form .form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:50px;
+}
+
+.legal-form .form-group{
+    margin-bottom:20px;
+}
+
+.legal-form .full-width{
+    margin-top:50px;
+}
+
+.legal-form input,
+.legal-form select{
+    height:65px;
 }
