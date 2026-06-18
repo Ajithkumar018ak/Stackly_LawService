@@ -1,11 +1,4 @@
-/* ==========================================
-AEGIS LEGAL CHAMBERS & PARTNERS
-MAIN JAVASCRIPT
-========================================== */
 
-/* ==========================================
-STICKY NAVBAR
-========================================== */
 
 const navbar = document.getElementById("navbar");
 
@@ -19,9 +12,7 @@ window.addEventListener("scroll", () => {
 
 });
 
-/* ==========================================
-MOBILE MENU
-========================================== */
+
 
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
@@ -40,10 +31,7 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
 });
 
-/* ==========================================
-INTERSECTION OBSERVER
-SCROLL REVEAL ANIMATION
-========================================== */
+
 
 const revealElements = document.querySelectorAll(".reveal");
 
@@ -73,10 +61,7 @@ revealElements.forEach((el) => {
     revealObserver.observe(el);
 });
 
-/* ==========================================
-SMOOTH PARALLAX HERO
-60FPS OPTIMIZED
-========================================== */
+
 
 const hero = document.querySelector(".hero");
 
@@ -106,9 +91,7 @@ window.addEventListener("scroll", () => {
 
 });
 
-/* ==========================================
-COUNTER ANIMATION
-========================================== */
+
 
 const counters = document.querySelectorAll(".counter");
 
@@ -182,10 +165,7 @@ counters.forEach(counter => {
     counterObserver.observe(counter);
 });
 
-/* ==========================================
-SCROLL PROGRESS BAR
-OPTIONAL AUTO CREATE
-========================================== */
+
 
 const progressBar = document.createElement("div");
 
@@ -207,10 +187,7 @@ window.addEventListener("scroll", () => {
 
 });
 
-/* ==========================================
-BACK TO TOP BUTTON
-AUTO CREATE
-========================================== */
+
 
 const backToTop = document.createElement("button");
 
@@ -242,9 +219,7 @@ backToTop.addEventListener("click", () => {
 
 });
 
-/* ==========================================
-FADE HERO CONTENT
-========================================== */
+
 
 const heroContent =
     document.querySelector(".hero-content");
@@ -261,9 +236,7 @@ window.addEventListener("scroll", () => {
 
 });
 
-/* ==========================================
-ACTIVE NAVIGATION HIGHLIGHT
-========================================== */
+
 
 const sections = document.querySelectorAll("section");
 const navItems = document.querySelectorAll(".nav-links a");
@@ -298,9 +271,6 @@ window.addEventListener("scroll", () => {
 
 });
 
-/* ==========================================
-PRELOADER (OPTIONAL)
-========================================== */
 
 window.addEventListener("load", () => {
 
@@ -308,9 +278,6 @@ window.addEventListener("load", () => {
 
 });
 
-/* ==========================================
-CONSOLE BRANDING
-========================================== */
 
 console.log(`
 =========================================
@@ -320,9 +287,7 @@ Premium Single Page Architecture
 =========================================
 `);
 
-/* ==========================
-AUTH MODAL
-========================== */
+
 
 function openAuth() {
     document.getElementById("loginModal").style.display = "flex";
@@ -332,9 +297,7 @@ function closeAuth() {
     document.getElementById("loginModal").style.display = "none";
 }
 
-/* ==========================
-SWITCH FORMS
-========================== */
+
 
 function showSignup() {
 
@@ -357,9 +320,7 @@ function showForgot() {
     document.getElementById("forgotBox").style.display = "block";
 }
 
-/* ==========================
-LOGIN
-========================== */
+
 
 function loginUser() {
 
@@ -390,9 +351,7 @@ function loginUser() {
     }
 }
 
-/* ==========================
-SIGNUP
-========================== */
+
 
 function signupUser() {
 
@@ -445,9 +404,7 @@ function signupUser() {
     showLogin();
 }
 
-/* ==========================
-FORGOT PASSWORD
-========================== */
+
 
 function forgotPassword() {
 
@@ -467,9 +424,7 @@ function forgotPassword() {
     showLogin();
 }
 
-/* ==========================
-LOGOUT
-========================== */
+
 
 function logoutUser() {
 
@@ -481,9 +436,7 @@ function logoutUser() {
     window.location.href = "index.html";
 }
 
-/* ==========================
-CLIENT PAGE PROTECTION
-========================== */
+
 
 function protectClientPage() {
 
@@ -498,9 +451,7 @@ function protectClientPage() {
     }
 }
 
-/* ==========================
-ADMIN PAGE PROTECTION
-========================== */
+
 
 function protectAdminPage() {
 
@@ -515,9 +466,7 @@ function protectAdminPage() {
     }
 }
 
-/* ==========================
-CLOSE MODAL OUTSIDE CLICK
-========================== */
+
 
 window.onclick = function (event) {
 
@@ -531,7 +480,7 @@ window.onclick = function (event) {
 };
 
 
-// Mouse Parallax
+
 
 document.addEventListener("mousemove",(e)=>{
 
