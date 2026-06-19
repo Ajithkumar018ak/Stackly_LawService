@@ -621,3 +621,31 @@ document.getElementById("legalForm").addEventListener("submit", function(e){
 });
 
 
+
+function toggleMenu() {
+    const sidebar = document.querySelector(".sidebar");
+
+    sidebar.classList.toggle("active");
+
+    if (sidebar.classList.contains("active")) {
+        document.body.classList.add("menu-open");
+    } else {
+        document.body.classList.remove("menu-open");
+    }
+}
+
+
+function toggleMenu() {
+    const sidebar = document.querySelector(".sidebar");
+
+    sidebar.classList.toggle("active");
+
+    // IF OPEN → stop scroll
+    if (sidebar.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+    } 
+    // IF CLOSE → enable scroll
+    else {
+        document.body.style.overflow = "auto";
+    }
+}

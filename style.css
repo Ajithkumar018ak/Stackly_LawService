@@ -1000,27 +1000,34 @@ RESPONSIVE
         margin-bottom:0;
     }
 
-}@media(max-width:768px){
+}
+
+@media(max-width:768px){
 
     .login-btn{
         display:none;
     }
 
     .navbar{
-        padding:15px 20px;
+        height:90px;
+        padding:0 20px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
     }
 
-   
     .logo img{
-        height:90px !important;
+        height:75px !important;
         width:auto;
         max-width:220px;
         object-fit:contain;
 
-        margin-top:0;
-        margin-bottom:0;
+        margin:0;
     }
 
+    .hamburger{
+        margin-top:0;
+    }
 }
 
 
@@ -1095,7 +1102,9 @@ GLASS CARDS
 .metric-card,
 .practice-card,
 .case-card,
-.auth-box{
+.auth-box
+.legal-form
+{
 
     background:
     rgba(255,255,255,.06) !important;
@@ -3346,15 +3355,15 @@ RESPONSIVE
 .legal-form input,
 .legal-form select,
 .legal-form textarea{
-    background: #ffffff;
+    background:#5b6b9c;
     border: 1px solid #d7d7d7;
-    color: #222;
+    color: #060606;
 }
 
 .legal-form input:focus,
 .legal-form select:focus,
 .legal-form textarea:focus{
-    border-color: #C5A059;
+    border-color: #080808;
     box-shadow: 0 0 0 3px rgba(197,160,89,.15);
     outline: none;
 }
@@ -3563,4 +3572,135 @@ TESTIMONIALS
 
 .remember-wrap{
     margin:15px 0 25px;
+}
+
+/* ==========================================
+SELECT DROPDOWN ALIGNMENT FIX
+========================================== */
+
+.form-group select{
+    height:65px !important;
+    padding:0 20px !important;
+    line-height:65px !important;
+    display:block;
+}
+
+.form-group select option{
+    padding:10px;
+}
+
+.mobile-login-btn{
+    display:none;
+}
+
+@media(max-width:768px){
+
+    .mobile-login-btn{
+        display:block;
+        text-align:center;
+        margin-top:20px;
+        padding:12px;
+        border:1px solid #C5A059;
+        border-radius:8px;
+        color:#fff !important;
+    }
+
+    .login-btn{
+        display:none;
+    }
+}
+
+.mobile-login-btn{
+    display:none;
+}
+
+@media(max-width:768px){
+
+    .login-btn{
+        display:none;
+    }
+
+    .mobile-login-btn{
+        display:block;
+        text-align:center;
+        margin-top:20px;
+        padding:12px;
+        border:1px solid #C5A059;
+        border-radius:8px;
+        color:#fff !important;
+        text-decoration:none;
+    }
+}
+
+/* LOGIN POPUP SIZE FIX */
+
+.auth-box{
+    width:700px !important;
+    max-width:90% !important;
+    min-height:500px !important;
+}
+
+.auth-left{
+    padding:30px !important;
+}
+
+.auth-left h2{
+    font-size:2rem !important;
+}
+
+.auth-box input,
+.auth-box select{
+    padding:14px 20px !important;
+    margin-bottom:15px !important;
+}
+
+.auth-box button{
+    padding:14px !important;
+}
+
+@media(max-width:768px){
+
+    .auth-box{
+        width:95% !important;
+        min-height:auto !important;
+        flex-direction:column;
+    }
+
+    .auth-right{
+        display:none;
+    }
+
+    .auth-left{
+        padding:25px !important;
+    }
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        height:100px;
+        padding:0 20px;
+    }
+
+    .logo img{
+        height:150px !important;
+        width:auto !important;
+        max-width:none !important;
+        margin:0 !important;
+    }
+}
+
+
+
+
+.ethos-img {
+    display: flex;
+    justify-content: flex-start; /* LEFT SIDE */
+}
+
+.ethos-img img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    object-fit: cover;
 }

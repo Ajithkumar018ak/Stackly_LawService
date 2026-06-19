@@ -853,3 +853,13 @@ h3:hover{
 }
 
 }
+
+
+@media(max-width:992px){
+
+    .sidebar{
+        overflow-y:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+
+}
