@@ -481,7 +481,7 @@ ABOUT SECTION
     <div class="section-title reveal">
 
         <h2>
-            About Aegis Legal Chambers & Partners
+            About  Legal Chambers & Partners
         </h2>
 
         <p>
@@ -560,25 +560,44 @@ ABOUT SECTION
 
         <div class="form-grid">
 
-            <div class="form-group">
-                <label>Full Corporate Representative Name</label>
-                <input type="text" placeholder="Enter Full Name">
-            </div>
+           <div class="form-group">
+    <label>Full Corporate Representative Name</label>
+    <input
+        type="text"
+        id="fullName"
+        placeholder="Enter Full Name"
+        oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')"
+        required>
+</div>
 
-            <div class="form-group">
-                <label>Registered Entity Name</label>
-                <input type="text" placeholder="Enter Company Name">
-            </div>
+<div class="form-group">
+    <label>Registered Entity Name</label>
+    <input
+        type="text"
+        id="companyName"
+        placeholder="Enter Company Name"
+        oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')"
+        required>
+</div>
 
-            <div class="form-group">
-                <label>Verified Secure Email</label>
-                <input type="email" placeholder="name@company.com">
-            </div>
+<div class="form-group">
+    <label>Verified Secure Email</label>
+    <input
+        type="email"
+        placeholder="name@company.com"
+        required>
+</div>
 
-            <div class="form-group">
-                <label>Secure Phone Line</label>
-                <input type="tel" placeholder="+91-00000-0000">
-            </div>
+<div class="form-group">
+    <label>Secure Phone Line</label>
+    <input
+        type="tel"
+        id="phone"
+        maxlength="10"
+        placeholder="9876543210"
+        oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+        required>
+</div>
 
             <div class="form-group">
                 <label>Select Practice Area</label>
@@ -626,6 +645,56 @@ ABOUT SECTION
     </form>
 
 </section>
+
+
+<!-- TESTIMONIALS SECTION START -->
+
+<section class="testimonials-section">
+
+    <div class="section-title reveal">
+        <h2>Client Testimonials</h2>
+        <p>
+            Trusted by businesses, executives, and organizations across multiple industries.
+        </p>
+    </div>
+
+    <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal">
+            <img src="./assets/client1.webp" alt="Client">
+
+            <h3>Michael Anderson</h3>
+
+            <p>
+                "Legal Chambers provided exceptional legal guidance during our corporate acquisition. Their professionalism and strategic insight were invaluable."
+            </p>
+        </div>
+
+        <div class="testimonial-card reveal">
+            <img src="./assets/client2.webp" alt="Client">
+
+            <h3>Sarah Williams</h3>
+
+            <p>
+                "The team handled our litigation matter with outstanding expertise and delivered results beyond expectations."
+            </p>
+        </div>
+
+        <div class="testimonial-card reveal">
+            <img src="./assets/client3.webp" alt="Client">
+
+            <h3>David Thompson</h3>
+
+            <p>
+                "Highly professional, responsive, and committed to protecting our business interests at every stage."
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS SECTION END -->
 
 <!-- FOOTER -->
 
@@ -777,6 +846,14 @@ ABOUT SECTION
                 <input type="password"
                        id="loginPassword"
                        placeholder="Password">
+
+
+                       <div class="remember-wrap">
+    <label class="remember-me">
+        <input type="checkbox" id="rememberMe">
+        <span>Remember Me</span>
+    </label>
+</div>
 
                 <button onclick="loginUser()">
                     Log In

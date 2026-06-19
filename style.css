@@ -989,8 +989,36 @@ RESPONSIVE
         display:none;
     }
 
+    .navbar{
+        padding:15px 20px;
+    }
+
     .logo img{
-        height:45px;
+        height:70px !important;
+        width:auto;
+        margin-top:0;
+        margin-bottom:0;
+    }
+
+}@media(max-width:768px){
+
+    .login-btn{
+        display:none;
+    }
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+   
+    .logo img{
+        height:90px !important;
+        width:auto;
+        max-width:220px;
+        object-fit:contain;
+
+        margin-top:0;
+        margin-bottom:0;
     }
 
 }
@@ -1067,8 +1095,7 @@ GLASS CARDS
 .metric-card,
 .practice-card,
 .case-card,
-.auth-box,
-.legal-form{
+.auth-box{
 
     background:
     rgba(255,255,255,.06) !important;
@@ -3297,4 +3324,243 @@ RESPONSIVE
 .legal-form input,
 .legal-form select{
     height:65px;
+}
+
+
+
+/* ===== FORM COLOR UPDATE ===== */
+
+.legal-form{
+    background: linear-gradient(135deg,#ffffff,#f8f5ef);
+    padding: 40px;
+    border: 2px solid #C5A059;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+}
+
+.legal-form label{
+    color: #0A1128;
+    font-weight: 600;
+}
+
+.legal-form input,
+.legal-form select,
+.legal-form textarea{
+    background: #ffffff;
+    border: 1px solid #d7d7d7;
+    color: #222;
+}
+
+.legal-form input:focus,
+.legal-form select:focus,
+.legal-form textarea:focus{
+    border-color: #C5A059;
+    box-shadow: 0 0 0 3px rgba(197,160,89,.15);
+    outline: none;
+}
+
+
+/* ===== DARK LUXURY FORM ===== */
+
+.legal-form{
+    background: #f9f7f7;
+    border: 1px solid #D4AF37;
+    border-radius: 20px;
+}
+
+
+/* =========================
+TESTIMONIALS
+========================= */
+
+.testimonials-section{
+    padding:120px 8%;
+    position:relative;
+}
+
+.testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+.testimonial-card{
+    padding:35px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(197,160,89,.25);
+
+    border-radius:24px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.25);
+
+    transition:.4s ease;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+
+    border-color:#C5A059;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+}
+
+.testimonial-card img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:50%;
+
+    margin-bottom:20px;
+
+    border:3px solid #C5A059;
+}
+
+.testimonial-card h3{
+    color:#fff;
+    margin-bottom:6px;
+}
+
+.testimonial-card span{
+    color:#C5A059;
+    font-size:.9rem;
+    display:block;
+    margin-bottom:18px;
+}
+
+.testimonial-card p{
+    color:rgba(255,255,255,.8);
+    line-height:1.8;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .testimonials-section{
+        padding:80px 6%;
+    }
+
+    .testimonials-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .navbar{
+        padding: 15px 20px;
+        min-height: 75px;
+    }
+
+    .logo{
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img{
+        height: 55px !important;
+        width: auto;
+        max-width: 180px;
+        object-fit: contain;
+    }
+
+    .hamburger{
+        margin-left: auto;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .logo img{
+        height: 70px !important;
+        width: auto !important;
+        max-height: none !important;
+        max-width: 220px !important;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .logo{
+        width: 220px !important;
+        flex-shrink: 0;
+    }
+
+    .logo img{
+        display:block;
+        height:70px !important;
+        width:auto !important;
+    }
+
+}
+
+
+/* MOBILE HEADER FIX */
+@media (max-width:768px){
+
+    .navbar{
+        height:70px;
+        padding:0 20px;
+        display:flex;
+        align-items:center;
+    }
+
+    .logo{
+        display:flex;
+        align-items:center;
+        height:100%;
+    }
+
+    .logo img{
+        height:85px !important;
+        width:auto;
+        margin:0 !important;
+        object-fit:contain;
+    }
+
+    .hamburger{
+        margin-left:auto;
+    }
+}
+
+
+.remember-me{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#fff;
+    cursor:pointer;
+}
+
+.remember-me input{
+    width:18px !important;
+    height:18px !important;
+    margin:0 !important;
+    flex-shrink:0;
+}
+
+.remember-me span{
+    display:inline-block;
+    line-height:1;
+}
+
+.remember-me input[type="checkbox"]{
+    width:18px !important;
+    margin-bottom:0 !important;
+}
+
+.remember-wrap{
+    margin:15px 0 25px;
 }
