@@ -120,21 +120,25 @@ NAVBAR
             </p>
 
             <form>
+  <div class="form-group">
+        <input type="text"
+               placeholder="Full Name"
+               id="fullName"
+               oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')">
+    </div>
 
-                <div class="form-group">
-                    <input type="text"
-                           placeholder="Full Name">
-                </div>
+    <div class="form-group">
+        <input type="email"
+               placeholder="Email Address">
+    </div>
 
-                <div class="form-group">
-                    <input type="email"
-                           placeholder="Email Address">
-                </div>
-
-                <div class="form-group">
-                    <input type="tel"
-                           placeholder="Phone Number">
-                </div>
+    <div class="form-group">
+        <input type="tel"
+               placeholder="Phone Number"
+               id="phoneNumber"
+               oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+               maxlength="10">
+    </div>
 
                 <div class="form-group">
 
@@ -150,11 +154,10 @@ NAVBAR
 
                 </div>
 
-                <div class="form-group">
-                    <textarea rows="6"
-                    placeholder="Briefly describe your legal matter">
-                    </textarea>
-                </div>
+             <div class="form-group">
+        <textarea rows="6"
+                  placeholder="Briefly describe your legal matter"></textarea>
+    </div>
 
                 <button type="submit"
                         class="submit-btn">
